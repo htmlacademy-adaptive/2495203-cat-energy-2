@@ -54,15 +54,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 38px 59px;
+    counter-reset: feature;
   }
 
   @media (min-width: $desktop-width) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: normal;
-    padding-top: 1px;
-    counter-reset: feature;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 78px;
   }
 }
 
@@ -92,6 +89,7 @@
     padding-top: 39px;
     font-size: 16px;
     line-height: 24px;
+    counter-increment: feature;
 
     &::before {
       width: 80px;
@@ -99,6 +97,7 @@
     }
 
     &::after {
+      content: counter(feature);
       position: absolute;
       top: 0;
       right: 0;
@@ -107,14 +106,6 @@
       font-size: 280px;
       line-height: 280px;
       color: $basic-grey;
-    }
-  }
-
-  @media (min-width: $desktop-width) {
-    counter-increment: feature;
-
-    &::after {
-      content: counter(feature);
     }
   }
 
@@ -146,7 +137,7 @@
     }
 
     @media (min-width: $desktop-width) {
-      transform: translateX(12px);
+      transform: translateX(3px);
     }
   }
 
@@ -161,7 +152,7 @@
     }
 
     @media (min-width: $desktop-width) {
-      transform: translateX(9px);
+      transform: translateX(4px);
     }
   }
 
